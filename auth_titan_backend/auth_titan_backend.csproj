@@ -15,8 +15,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
 <<<<<<< HEAD
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-=======
->>>>>>> 8f5554f85a621ab3400c4fee4031f02240eb9810
   </ItemGroup>
 
   <ItemGroup>
