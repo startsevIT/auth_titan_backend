@@ -36,14 +36,14 @@ namespace auth_titan_backend.Controllers
 				return View(viewModel);
 			}
 
-			var user = await _userManager.FindByNameAsync(viewModel.Email);
+			var user = await _userManager.FindByEmailAsync(viewModel.Email.ToString());
 			if (user == null)
 			{
 				ModelState.AddModelError(string.Empty, "User not found");
 				return View(viewModel);
 			}
 
-			var result = await _signInManager.PasswordSignInAsync(viewModel.Email,
+			var result = await _signInManager.PasswordSignInAsync(viewModel.Email.ToString(),
 				viewModel.Password, false,false);
 			if (result.Succeeded)
 			{
@@ -73,7 +73,7 @@ namespace auth_titan_backend.Controllers
 
 			var user = new AppUser
 			{
-				UserName = viewModel.Username,
+				Email = viewModel.Email,
 			};
 
 			var result = await _userManager.CreateAsync(user, viewModel.Password);

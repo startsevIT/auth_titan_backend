@@ -5,7 +5,8 @@ namespace auth_titan_backend.Models
 	public class RegisterViewModel
 	{
 		[Required]
-		public string Username { get; set; }
+		[DataType(DataType.EmailAddress)]
+		public EmailAddressAttribute Email { get; set; }
 		[Required]
 		[DataType(DataType.Password)]
 		public string Password { get; set; }
