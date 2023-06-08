@@ -6,7 +6,7 @@ namespace auth_titan_backend.Models
 	{
 		[Required]
 		[DataType(DataType.EmailAddress)]
-		public EmailAddressAttribute Email { get; set; }
+		public string Email { get; set; }
 		[Required]
 		[DataType(DataType.Password)]
 		public string Password { get; set; }
